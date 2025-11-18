@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Procucto - <%= item.titulo %></title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Este sitio web rtata sobre videojuegos" />
+    <meta name="keywords" content="videojuegos,colecciones,games" />
+    <meta name="author" content="Francisco Romero" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="alternate"
+      href="atom.xml"
+      type="application/atom+xml"
+      title="Atom"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="videojuegos.com" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/videojuegos.css" />
+    <link rel="stylesheet" href="/stylesheets/item.css" />
+    <script src="https://kit.fontawesome.com/ef48f4e9ad.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <%- include("partials/menuNav") %>
+
+    <main>
+        <section id="item-info">
+            <div id="col1-iamgen">
+                <picture>
+                    <img src="<%= item.imagen %>" alt="foto">
+                </picture>
+            </div>
+    
+            <div id="col2-info">
+                <h2><%= item.titulo %></h2>
+                <div class="tags">
+                  <% item.categoria.forEach(etiqueta => { %>
+                    <span><%= etiqueta %></span>
+                  <% }) %>
+                </div>
+                <h3 class="precio"><%= item.precio %></h3>
+                <div class="botones">
+                    <button class="btn-comprar">Comprar ahora</button>
+                    <button class="btn-favoritos">Añadir a favoritos</button>
+                </div>
+                <p class="descripcion"><%= item.descripcion %></p>
+    
+                <h3>Opiniones de los usuarios</h3>
+                <div class="opiniones">
+                    <% item.comentarios.forEach(comentario => { %>
+                        <div class="review-card">
+                            <blockquote>
+                                <div class="review-header">
+                                    <span class="review-user"><%=comentario.autor %></span>
+                                    <span class="review-rating">
+                                        <% for(let i=0; i<(5-comentario.valoracion); i++){ %>☆<% } %><% for(let i=0; i<comentario.valoracion; i++){ %>★<% } %>
+                                    </span>
+                                </div>
+                                <p class="review-text"><%=comentario.texto %></p>
+                            </blockquote>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+
+    <%- include("partials/footer") %>
+</body>
+</html>

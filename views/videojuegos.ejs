@@ -27,21 +27,28 @@
 
       <div class="card-container">
 
-        <div class="card">
-          <picture class="imagen">
-            <img src="https://placehold.co/350x200" alt="foto">
-          </picture>
-          <h2 class="titulo">Monster Hunter Wilds</h2>
-          <p class="descripcion">
-            Juego de acción y aventura con exploración épica.
-          </p>
-          <div class="tags">
-            <span>Aventura</span>
-            <span>Exploración</span>
-            <span>Mundo Abierto</span>
+        <!-- mostrar todos los juegos desde el json --> 
+        <% arrayVideojuegos.forEach(juego => { %>
+        <a href="/videojuegos/<%= juego.id %>">
+          <div class="card">
+            <picture class="imagen">
+              <img src="<%= juego.imagen %>" alt="foto">
+            </picture>
+            <h2 class="titulo"><%= juego.titulo %></h2>
+            <p class="descripcion">
+              <%= juego.descripcion %>
+            </p>
+            <div class="tags">
+              <% juego.categoria.forEach(etiqueta => { %>
+                <span><%= etiqueta %></span>
+              <% }) %>
+            </div>
+            <p class="precio"><%= juego.precio %> €</p>
           </div>
-          <p class="precio">60€</p>
-        </div>
+        </a>  
+        <% }) %>
+
+        
 
       </div>
     </section>

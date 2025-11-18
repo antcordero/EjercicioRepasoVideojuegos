@@ -15,13 +15,9 @@ router.get('/videojuegos', function(req, res, next) {
   res.render('videojuegos', { arrayVideojuegos : videojuegos });
 });
 
-module.exports = router;
+router.get('/videojuegos/:pid', function(req, res, next) {
+  let item = dataService.getVideojuegosById(req.params.pid);
+  res.render('item', { item : item });
+});
 
-/*
- <!-- mostrar todos los juegos desde el json -->
-    
-    <% arrayVideojuegos.forEach(juego => { %>
-      <h3><%= juego.id %></h3>
-      <h3><%= juego.titulo %></h3>   
-    <% }); %>
-*/
+module.exports = router;

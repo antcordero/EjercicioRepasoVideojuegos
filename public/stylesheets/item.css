@@ -1,0 +1,251 @@
+@import "theme.css";
+@import "normalize.css";
+@import "components.css";
+@import "accordeon.css";
+
+/************ GENERAL ****************/
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-gradient);
+    min-height: 100vh;
+}
+
+/**************** NAV **************/
+header {
+    background: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+
+    #titulo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        color: var(--text);
+        text-shadow: 2px 2px 6px rgba(67, 73, 140, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+
+        .logo {
+            background: var(--elements-gradient);
+            border-radius: 8px;
+        }
+    }
+
+    /***NAV***/
+    #nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+
+        li a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.2s;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        li a:hover,
+        li a:focus {
+            background: var(--text-hover);
+            color: #fff;
+        }
+
+        li {
+            position: relative;
+        }
+
+    }
+
+    /*Sumbemu*/
+    #nav .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--secondary-color);
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        padding: 0.5rem 0;
+        min-width: 140px;
+        width: 140px;
+        z-index: 100;
+        flex-direction: column;
+
+        li {
+            width: 100%;
+            box-sizing: border-box;
+            color: var(--text);
+            padding: 5px;
+        }
+
+        li:hover {
+            background-color: #0000003f;
+        }
+
+        li a {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.5rem 1.2rem;
+            color: var(--text);
+            border-radius: 0;
+            white-space: nowrap;
+        }
+
+        li a:hover {
+            background: var(--text-hover);
+            color: #fff;
+        }
+    }
+
+    #nav ul li:hover .submenu {
+        display: flex;
+    }
+
+}
+
+/*************** MAIN ***************/
+
+#item-info {
+    background: var(--elements-gradient);
+    padding: 20px;
+    margin: 2rem;
+    border: 2px solid rgba(0, 0, 0, 0.25); 
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 #0000003f;
+
+    margin-top: 250px;
+
+    display: grid;
+    grid-template-columns: auto 1fr ;
+    grid-template-areas: 
+    "col1-iamgen col2-info";
+    gap: 20px;
+
+    #col1-imagen {
+
+        grid-area: col1-imagen;
+
+        img {
+            border-radius: 20px;
+        }
+
+        picture img {
+            padding: 20px;
+            background: var(--background-gradient);
+            border: 1px solid var(--dark-pink);
+            border-radius: 20px;
+        }
+    }
+
+    #col2-info {
+        grid-area: col2-info;
+
+        h2 {
+            color: var(--text);
+            text-shadow: 2px 2px 8px rgba(67,73,140,0.4), 0 2px 4px rgba(0,0,0,0.25);
+        }
+
+        h3 {
+            color: var(--text);
+            text-shadow: 2px 2px 8px rgba(67,73,140,0.4), 0 2px 4px rgba(0,0,0,0.25);
+        }
+
+        h3.precio {
+            color: var(--secondary-color);
+            font-size: 2rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
+
+            span {
+                background: var(--secondary-color);
+                padding: 8px 15px 8px 15px;
+                border-radius: 20px;
+                color: var(--text);
+            }
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
+
+            .btn-comprar {
+                padding: 8px 60px 8px 60px;
+                background-color: lightgreen;
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 4px 12px 0 rgba(144, 238, 144, 0.5);
+            }
+            .btn-favoritos {
+                padding: 8px 60px 8px 60px;
+                background-color: rgb(255, 255, 224);
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 4px 12px 0 rgba(255, 255, 224, 0.5);
+            }
+        }
+
+        p.descripcion {
+            color: var(--text);
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .opiniones {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+
+            .review-card {
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 20px;
+                background-color: #fafafa;
+
+                blockquote {
+                    margin: 0;
+                }
+
+                .review-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 12px;
+
+                    .review-user {
+                        font-weight: bold;
+                        color: #333;
+                    }
+                    .review-rating {
+                        color: #ffc107;
+                        font-size: 18px;
+                    }
+                }
+
+                .review-text {
+                    color: #555;
+                    line-height: 1.5;
+                    font-style: italic;
+                }
+            }
+
+        }
+
+    }
+}
