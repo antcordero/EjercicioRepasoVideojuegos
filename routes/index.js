@@ -16,8 +16,8 @@ router.get('/videojuegos', function(req, res, next) {
 });
 
 router.get('/videojuegos/:pid', function(req, res, next) {
-  let item = dataService.getVideojuegosById(req.params.pid);
-  res.render('item', { item : item });
+  let item1 = dataService.getVideojuegosById(req.params.pid);
+  res.render('item', { item : item1 });
 });
 
 module.exports = router;
