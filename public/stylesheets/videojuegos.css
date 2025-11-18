@@ -119,6 +119,8 @@ header {
     background: var(--background-gradient);
     min-height: 100vh;
 
+    margin-top: 170px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,7 +139,7 @@ header {
 
         a {
             text-decoration: none;
-            
+
             .card {
                 display: grid;
                 grid-template-columns: 1fr 90px;
