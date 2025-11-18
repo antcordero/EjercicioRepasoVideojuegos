@@ -16,55 +16,97 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="videojuegos.com" />
 
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-
-    <%- include("partials/menuNav") %> 
+    <%- include("partials/menuNav") %>
 
     <main>
       <section id="hero">
         <div id="hero-info">
-          <h2>Sumérgete en un mundo de aventuras épicas y conquista el ciberespacio</h2>
+          <h2>
+            Sumérgete en un mundo de aventuras épicas y conquista el
+            ciberespacio
+          </h2>
           <button id="download">DESCARGAR AHORA</button>
         </div>
       </section>
 
       <section id="mas-info">
-        
         <h2>Más Información</h2>
-        
+
         <div id="cartas">
           <div class="card">
-            <div class="card-icon">
-              ⚔️
-            </div>
+            <div class="card-icon">⚔️</div>
             <h3>Acción Intensa</h3>
-            <p>Combates épicos en tiempo real con mecánicas innovadoras que te mantendrán al límite</p>
-          </div>
-  
-          <div class="card">
-            <div class="card-icon">
-              🌍
-            </div>
-            <h3>Mundo Abierto</h3>
-            <p>Explora vastos territorios llenos de secretos, misiones y desafíos sin límites</p>
-          </div>
-  
-          <div class="card">
-            <div class="card-icon">
-              👥
-            </div>
-            <h3>Multijugador</h3>
-            <p>Únete a millones de jugadores en una experiencia social única y competitiva</p>
+            <p>
+              Combates épicos en tiempo real con mecánicas innovadoras que te
+              mantendrán al límite
+            </p>
           </div>
 
+          <div class="card">
+            <div class="card-icon">🌍</div>
+            <h3>Mundo Abierto</h3>
+            <p>
+              Explora vastos territorios llenos de secretos, misiones y desafíos
+              sin límites
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">👥</div>
+            <h3>Multijugador</h3>
+            <p>
+              Únete a millones de jugadores en una experiencia social única y
+              competitiva
+            </p>
+          </div>
         </div>
       </section>
+
+      <section id="consolas">
+        <h1>Información de las consolas</h1>
+        <div id="acordeon">
+          <div class="consola">
+            <h3>PlayStation 5
+              <span class="icono-acordeon">
+                <i class="fa-solid fa-plus drop-acordeon" style="color: #ffffff;"></i>
+              </span>
+            </h3>
+            <p class="parrafo-acordeon">Gráficos impresionantes y tiempos de carga ultrarrápidos gracias a su potente SSD y soporte para 4K. El mando DualSense ofrece una experiencia inmersiva con respuesta háptica avanzada y gatillos adaptativos.</p>
+          </div>
+          <div class="consola">
+            <h3>Xbox Series X
+              <span class="icono-acordeon">
+                <i class="fa-solid fa-plus drop-acordeon" style="color: #ffffff;"></i>
+              </span>
+            </h3>
+            <p class="parrafo-acordeon">La consola más potente de Microsoft, diseñada para juegos en 4K nativo y hasta 120 FPS. Destaca por su retrocompatibilidad y el servicio Xbox Game Pass, que brinda acceso a una vasta biblioteca de juegos.</p>
+          </div>
+          <div class="consola">
+            <h3>Nintendo Switch
+              <span class="icono-acordeon">
+                <i class="fa-solid fa-plus drop-acordeon" style="color: #ffffff;"></i>
+              </span>
+            </h3>
+            <p class="parrafo-acordeon">Innovadora consola híbrida que permite jugar tanto en modo portátil como en modo sobremesa. Cuenta con exclusivos como Zelda y Mario, además de un catálogo diverso y colorido para todas las edades.</p>
+          </div>
+          <div class="consola">
+            <h3>PC Gamer
+              <span class="icono-acordeon">
+                <i class="fa-solid fa-plus drop-acordeon" style="color: #ffffff;"></i>
+              </span>
+            </h3>
+            <p class="parrafo-acordeon">La plataforma más versátil para gamers exigentes, personalizable y actualizable. Permite disfrutar de juegos con la máxima calidad gráfica, mods, periféricos avanzados y comunidades en línea activas.</p>
+          </div>
+        </div>
+      </section>
+      
     </main>
 
-    <%- include("partials/footer") %> 
-    
+    <%- include("partials/footer") %>
+
     <script src="/javascripts/app.js"></script>
   </body>
 </html>

@@ -22,6 +22,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 99;
   /**/
 
   #titulo {
@@ -30,7 +31,7 @@ header {
     align-items: center;
     gap: 2rem;
     color: var(--text);
-    text-shadow: 2px 2px 6px rgba(67,73,140,0.4), 0 1px 2px rgba(0,0,0,0.2);
+    text-shadow: 2px 2px 6px rgba(67, 73, 140, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
 
     .logo {
       background: var(--elements-gradient);
@@ -62,6 +63,55 @@ header {
       background: var(--text-hover);
       color: #fff;
     }
+
+    /*---Dropdown estilos---*/
+    ul li {
+      position: relative;
+    }
+
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--secondary-color);
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      padding: 0.5rem 0;
+      min-width: 140px;
+      width: 140px;
+      z-index: 100;
+      flex-direction: column;
+    }
+
+    ul li:hover .submenu {
+      display: flex;
+    }
+
+    .submenu li {
+      width: 100%;
+      box-sizing: border-box;
+      color: var(--text);
+      padding: 5px;
+    }
+
+    .submenu li:hover {
+      background-color: #0000003f;
+    }
+
+    .submenu li a {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.5rem 1.2rem;
+      color: var(--text);
+      border-radius: 0;
+      white-space: nowrap;
+    }
+
+    .submenu li a:hover {
+      background: var(--text-hover);
+      color: #fff;
+    }
   }
 }
 
@@ -79,7 +129,7 @@ header {
   min-height: 100vh;
 
   color: var(--text);
-  text-shadow: 2px 2px 6px rgba(67,73,140,0.4), 0 1px 2px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 6px rgba(67, 73, 140, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
   text-align: center;
 
   #hero-info {
@@ -93,8 +143,8 @@ header {
       font-size: 1rem;
       font-weight: bold;
       border: none;
-      box-shadow: 0 4px 16px 0 rgba(240, 147, 251,0.33), 0 2px 8px rgba(0,0,0,0.19);
-    
+      box-shadow: 0 4px 16px 0 rgba(240, 147, 251, 0.33), 0 2px 8px rgba(0, 0, 0, 0.19);
+
       cursor: pointer;
     }
 
@@ -105,8 +155,8 @@ header {
 
   }
 
-  
-  
+
+
 }
 
 /*************** MAS INFORMACIÓN ************/
@@ -123,7 +173,7 @@ header {
   h2 {
     margin: 0px;
     color: var(--text);
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.22), 0 2px 12px var(--dark-pink, #f5576c);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.22), 0 2px 12px var(--dark-pink, #f5576c);
   }
 
   #cartas {
@@ -143,8 +193,8 @@ header {
       justify-content: center;
       align-items: center;
       background-color: #f5576c14;
-      
-      
+
+
       .card-icon {
         background: var(--background-gradient);
         border-radius: 50px;
@@ -153,19 +203,75 @@ header {
       h3 {
         color: var(--light-pink);
       }
-  
+
       p {
         text-align: center;
       }
     }
 
     .card:hover {
-    transform: translateY(-16px) scale(1.06);
-    transition: transform 0.2s;
-    box-shadow: 0 8px 24px 0 rgba(245, 87, 108, 0.2);
+      transform: translateY(-16px) scale(1.06);
+      transition: transform 0.2s;
+      box-shadow: 0 8px 24px 0 rgba(245, 87, 108, 0.2);
     }
   }
 }
+
+/*************** ACORDEÓN - SECTION CONSOLAS ************/
+section#consolas {
+
+  min-height: 60vh;
+  background: var(--background-gradient);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 50px;
+
+  h1 {
+      color: white;
+      margin: 0;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      font-size: 2.3rem;
+      margin-top: 30px;
+  }
+
+  div#acordeon {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      border-radius: 10px;
+      background-color: #8591ce;
+      padding: 20px;
+      margin: 0px 0px 30px 0px;
+
+      div.consola h3 {
+          display: flex;
+          justify-content: space-between;
+          background-color: #6875b8;
+          padding: 10px;
+          margin: 0;
+
+          i {
+              text-align: right;
+              cursor: pointer;
+          }
+      }
+
+      div.consola p {
+          padding-left: 30px;
+          display: none;
+      }
+
+      div.consola p.show {
+          display: flex;
+      }
+
+
+  }
+}
+
 
 /***************** FOOTER *******************/
 footer {
