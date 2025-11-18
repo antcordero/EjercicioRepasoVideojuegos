@@ -16,11 +16,36 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <link rel="canonical" href="videojuegos.com" />
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/videojuegos.css" />
     <script src="https://kit.fontawesome.com/ef48f4e9ad.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <%- include("partials/menuNav") %>
-    <h1>Prueba</h1>
+    
+    <section id="heroVideojuegos">
+      <h2>Lista Videojuegos</h2>
+
+      <div class="card-container">
+
+        <div class="card">
+          <picture class="imagen">
+            <img src="https://placehold.co/350x200" alt="foto">
+          </picture>
+          <h2 class="titulo">Monster Hunter Wilds</h2>
+          <p class="descripcion">
+            Juego de acción y aventura con exploración épica.
+          </p>
+          <div class="tags">
+            <span>Aventura</span>
+            <span>Exploración</span>
+            <span>Mundo Abierto</span>
+          </div>
+          <p class="precio">60€</p>
+        </div>
+
+      </div>
+    </section>
+
     <%- include("partials/footer") %>
   </body>
 </html>

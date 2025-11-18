@@ -6,14 +6,22 @@ var dataService = require("../data/dataService");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  let juego = dataService.getVideojuegos;
-  res.render('index', { arrayJuegos : juego });
+  res.render('index', {});
 });
 
 /**Ruta para la subpágina item.ejs */
-router.get('/item', function(req, res, next) {
-  let juego = dataService.getVideojuegos;
-  res.render('item', { arrayJuegos : juego });
+router.get('/videojuegos', function(req, res, next) {
+  let videojuegos = dataService.getVideojuegos();
+  res.render('videojuegos', { arrayVideojuegos : videojuegos });
 });
 
 module.exports = router;
+
+/*
+ <!-- mostrar todos los juegos desde el json -->
+    
+    <% arrayVideojuegos.forEach(juego => { %>
+      <h3><%= juego.id %></h3>
+      <h3><%= juego.titulo %></h3>   
+    <% }); %>
+*/

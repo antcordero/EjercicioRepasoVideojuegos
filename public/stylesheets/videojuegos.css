@@ -1,0 +1,226 @@
+@import "theme.css";
+@import "normalize.css";
+@import "components.css";
+@import "accordeon.css";
+
+/************ GENERAL ****************/
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/**************** NAV **************/
+header {
+    background: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+
+    #titulo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        color: var(--text);
+        text-shadow: 2px 2px 6px rgba(67, 73, 140, 0.4), 0 1px 2px rgba(0, 0, 0, 0.2);
+
+        .logo {
+            background: var(--elements-gradient);
+            border-radius: 8px;
+        }
+    }
+
+    /***NAV***/
+    #nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+
+        li a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.2s;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        li a:hover,
+        li a:focus {
+            background: var(--text-hover);
+            color: #fff;
+        }
+
+        li {
+            position: relative;
+        }
+
+    }
+
+    /*Sumbemu*/
+    #nav .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--secondary-color);
+        border-radius: 0 0 8px 8px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        padding: 0.5rem 0;
+        min-width: 140px;
+        width: 140px;
+        z-index: 100;
+        flex-direction: column;
+
+        li {
+            width: 100%;
+            box-sizing: border-box;
+            color: var(--text);
+            padding: 5px;
+        }
+
+        li:hover {
+            background-color: #0000003f;
+        }
+
+        li a {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0.5rem 1.2rem;
+            color: var(--text);
+            border-radius: 0;
+            white-space: nowrap;
+        }
+
+        li a:hover {
+            background: var(--text-hover);
+            color: #fff;
+        }
+    }
+
+    #nav ul li:hover .submenu {
+        display: flex;
+    }
+
+}
+
+/************** CARDs ***************/
+#heroVideojuegos {
+    background: var(--background-gradient);
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: var(--text);
+    }
+
+    .card-container {
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        .card {
+            display: grid;
+            grid-template-columns: 1fr 90px;
+            /* Más realista para que quepan bien los tags */
+            grid-template-rows: 160px 45px 1fr auto;
+            grid-template-areas:
+                "imagen imagen"
+                "titulo titulo"
+                "descripcion precio"
+                "tags precio";
+
+            width: 340px;
+            max-width: 100%;
+            min-width: 0;
+            min-height: 420px;
+            border: 1px solid var(--light-pink);
+            border-radius: 10px;
+            background: rgba(30, 30, 50, 0.26);
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+
+            picture.imagen {
+                grid-area: imagen;
+
+                justify-self: center;
+                width: 100%;
+                max-width: 320px;
+                height: 160px;
+
+                overflow: hidden;
+                border-radius: 7px;
+            }
+
+            picture.imagen img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 7px;
+                display: block;
+            }
+
+            h2.titulo {
+                grid-area: titulo;
+                text-align: center;
+                font-size: 1.5rem;
+                margin: 10px 0 0 0;
+                word-break: break-word;
+            }
+
+            p.descripcion {
+                grid-area: descripcion;
+                color: var(--text);
+                text-align: center;
+                font-size: 1rem;
+                margin-bottom: 0;
+            }
+
+            div.tags {
+                grid-area: tags;
+                display: flex;
+                flex-direction: column;
+                max-width: 80px;
+                gap: 5px;
+                margin-top: 8px;
+
+                span {
+                    background: var(--elements-gradient);
+                    border-radius: 20px;
+                    padding: 5px 10px;
+                    font-size: 0.8rem;
+                    text-align: center;
+                }
+            }
+
+            p.precio {
+                grid-area: precio;
+                color: var(--text);
+                font-weight: bold;
+                font-size: 2rem;
+                align-self: end;
+                justify-self: end;
+                margin-top: 8px;
+                margin-bottom: 0;
+                white-space: nowrap;
+            }
+        }
+    }
+
+}
