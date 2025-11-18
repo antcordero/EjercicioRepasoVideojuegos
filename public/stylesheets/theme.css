@@ -1,0 +1,16 @@
+:root {
+    --primary-color: #6b76dd; /*- Púrpura Principal*/
+    --secondary-color: #43498c; /*- Púrpura Oscuro*/
+    --light-pink: #f093fb; /*- Rosa Vibrante*/
+    --dark-pink: #f5576c; /*- Rosa Intenso*/
+    --gradient-offCanvas: rgba(30, 30, 50, 0.98);
+
+    /*Gradientes*/
+    --background-gradient: linear-gradient(135deg, #6b76dd 0%, #43498c 100%);
+    --elements-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+
+    /*textos*/
+    --text: #ffffff;
+    --text-hover: #6a6ca2; 
+
+}

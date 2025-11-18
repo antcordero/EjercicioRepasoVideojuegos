@@ -2,3 +2,191 @@
 @import "normalize.css";
 @import "components.css";
 
+/************GENERAL****************/
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/**************** NAV **************/
+header {
+  background: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+
+  /*menu fijo*/
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /**/
+
+  #titulo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    color: var(--text);
+    text-shadow: 2px 2px 6px rgba(67,73,140,0.4), 0 1px 2px rgba(0,0,0,0.2);
+
+    .logo {
+      background: var(--elements-gradient);
+      border-radius: 8px;
+    }
+  }
+
+  #nav {
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: color 0.2s;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+    }
+
+    ul li a:hover,
+    ul li a:focus {
+      background: var(--text-hover);
+      color: #fff;
+    }
+  }
+}
+
+/*************** MAIN ***************/
+/*************** HERO SECTION ***************/
+#hero {
+  background: var(--background-gradient);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /*altura de la sección*/
+  min-height: 100vh;
+
+  color: var(--text);
+  text-shadow: 2px 2px 6px rgba(67,73,140,0.4), 0 1px 2px rgba(0,0,0,0.2);
+  text-align: center;
+
+  #hero-info {
+    max-width: 600px;
+
+    #download {
+      padding: 15px 40px 15px 40px;
+      background: var(--elements-gradient);
+      border-radius: 25px;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      box-shadow: 0 4px 16px 0 rgba(240, 147, 251,0.33), 0 2px 8px rgba(0,0,0,0.19);
+    
+      cursor: pointer;
+    }
+
+    #download:hover {
+      transform: translateY(-6px);
+      transition: transform 0.2s;
+    }
+
+  }
+
+  
+  
+}
+
+/*************** MAS INFORMACIÓN ************/
+#mas-info {
+  background: var(--secondary-color);
+  height: 60vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+
+  h2 {
+    margin: 0px;
+    color: var(--text);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.22), 0 2px 12px var(--dark-pink, #f5576c);
+  }
+
+  #cartas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+    .card {
+      margin: 0px;
+      border: solid 1px var(--light-pink);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f5576c14;
+      
+      
+      .card-icon {
+        background: var(--background-gradient);
+        border-radius: 50px;
+      }
+
+      h3 {
+        color: var(--light-pink);
+      }
+  
+      p {
+        text-align: center;
+      }
+    }
+
+    .card:hover {
+    transform: translateY(-16px) scale(1.06);
+    transition: transform 0.2s;
+    box-shadow: 0 8px 24px 0 rgba(245, 87, 108, 0.2);
+    }
+  }
+}
+
+/***************** FOOTER *******************/
+footer {
+  background: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 10vh;
+
+  h3 {
+    margin: 0px;
+    font-weight: 500;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--light-pink);
+  }
+
+  a:hover {
+    color: var(--text);
+  }
+}

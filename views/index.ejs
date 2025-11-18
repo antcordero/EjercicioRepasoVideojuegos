@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title>Ejercicio Repaso Videojuegos</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Este sitio web rtata sobre videojuegos" />
+    <meta name="keywords" content="videojuegos,colecciones,games" />
+    <meta name="author" content="Francisco Romero" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="alternate"
+      href="atom.xml"
+      type="application/atom+xml"
+      title="Atom"
+    />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="videojuegos.com" />
+
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Prueba Videojuegos</p>
+
+    <%- include("partials/menuNav") %> 
+
+    <main>
+      <section id="hero">
+        <div id="hero-info">
+          <h2>Sumérgete en un mundo de aventuras épicas y conquista el ciberespacio</h2>
+          <button id="download">DESCARGAR AHORA</button>
+        </div>
+      </section>
+
+      <section id="mas-info">
+        
+        <h2>Más Información</h2>
+        
+        <div id="cartas">
+          <div class="card">
+            <div class="card-icon">
+              ⚔️
+            </div>
+            <h3>Acción Intensa</h3>
+            <p>Combates épicos en tiempo real con mecánicas innovadoras que te mantendrán al límite</p>
+          </div>
+  
+          <div class="card">
+            <div class="card-icon">
+              🌍
+            </div>
+            <h3>Mundo Abierto</h3>
+            <p>Explora vastos territorios llenos de secretos, misiones y desafíos sin límites</p>
+          </div>
+  
+          <div class="card">
+            <div class="card-icon">
+              👥
+            </div>
+            <h3>Multijugador</h3>
+            <p>Únete a millones de jugadores en una experiencia social única y competitiva</p>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <%- include("partials/footer") %> 
+    
+    <script src="/javascripts/app.js"></script>
   </body>
 </html>

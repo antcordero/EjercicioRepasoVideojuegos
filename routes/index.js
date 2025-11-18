@@ -6,7 +6,7 @@ var dataService = require("../data/dataService");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  let juegos = dataService.getVideojuegos;
+  let juego = dataService.getVideojuegos;
   res.render('index', { arrayJuegos : juego });
 });
 
