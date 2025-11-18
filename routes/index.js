@@ -10,4 +10,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { arrayJuegos : juego });
 });
 
+/**Ruta para la subpágina item.ejs */
+router.get('/item', function(req, res, next) {
+  let juego = dataService.getVideojuegos;
+  res.render('item', { arrayJuegos : juego });
+});
+
 module.exports = router;
