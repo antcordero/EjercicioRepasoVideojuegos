@@ -246,7 +246,7 @@ section#off-canvas.show{
   align-items: center;
   gap: 5rem;
 
-  #mas-info h2 {
+  h2 {
     margin: 0;
     color: var(--text);
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.22), 0 2px 12px var(--dark-pink, #f5576c);
